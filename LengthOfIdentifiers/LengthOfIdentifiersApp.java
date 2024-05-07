@@ -1,6 +1,6 @@
 package LengthOfIdentifiers;
 
-public class Main {
+public class LengthOfIdentifiersApp {
     public static void main(String[] args) {
         String programText = "int myVariable; MyClass myClass = new MyClass(); myClass.myMethod();";
         LengthOfIdentifiersModel model = new LengthOfIdentifiersModel(programText);

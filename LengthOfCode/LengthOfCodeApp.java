@@ -1,6 +1,6 @@
 package LengthOfCode;
 
-public class Main {
+public class LengthOfCodeApp {
     public static void main(String[] args) {
         LengthOfCodeModel model = new LengthOfCodeModel();
         LengthOfCodeView view = new LengthOfCodeView();
