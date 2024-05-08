@@ -17,12 +17,16 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.SwingUtilities;
 
+import com.example.CyclomaticComplexityCalculator.CyclomaticComplexityCalculator;
+import com.example.FanInFanOutCalculator.FanInFanOutCalculator;
 import com.example.FogIndex.FogIndexController;
 import com.example.FogIndex.FogIndexModel;
 import com.example.FogIndex.FogIndexView;
 import com.example.LengthOfIdentifiers.LengthOfIdentifiersController;
 import com.example.LengthOfIdentifiers.LengthOfIdentifiersModel;
 import com.example.LengthOfIdentifiers.LengthOfIdentifiersView;
+import com.example.NestedIf.NestedIf;
+import com.example.WeightedMethodPerClassCalculator.WeightedMethodPerClassCalculator;
 
 public class FileBrowserGUI extends JFrame {
     
@@ -60,7 +64,20 @@ public class FileBrowserGUI extends JFrame {
                         LengthOfIdentifiersView liview = new LengthOfIdentifiersView();
                         LengthOfIdentifiersController licontroller = new LengthOfIdentifiersController(limodel, liview);
                         licontroller.analyzeIdentifiers();
-                        JOptionPane.showMessageDialog(FileBrowserGUI.this, controller.updateView() + "\n" + licontroller.analyzeIdentifiers());
+                        // CyclomaticComplexityCalculator
+                        CyclomaticComplexityCalculator cyclomaticComplexityCalculator = new CyclomaticComplexityCalculator();
+                        // NestedIf
+                        NestedIf nestedIfCount = new NestedIf();
+                        // WeightedMethodPerClassCalculator
+                        WeightedMethodPerClassCalculator weightedMethodPerClassCalculator = new WeightedMethodPerClassCalculator();
+                        // 
+                        FanInFanOutCalculator fanInFanOutCalculator = new FanInFanOutCalculator();
+                        JOptionPane.showMessageDialog(FileBrowserGUI.this, controller.updateView() + 
+                        "\n" + licontroller.analyzeIdentifiers() + "\n" +
+                        cyclomaticComplexityCalculator.calculateCyclomaticComplexity(selectedFile) + "\n" +
+                        nestedIfCount.countNestedIfs(selectedFile) + "\n" +
+                        weightedMethodPerClassCalculator.calculateWeightedMethodPerClass(selectedFile) + "\n" +
+                        "FanInFanOutCalculator: " + "\n" + fanInFanOutCalculator.FIFOCalculator(selectedFile));
                     } catch (IOException ee) {
                         ee.printStackTrace();
                     }
