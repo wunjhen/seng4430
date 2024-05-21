@@ -218,15 +218,15 @@ public class Form_1 extends javax.swing.JPanel {
 
         String report2 ="";
         if(result2<=20){
-            report2 = "Moderate nesting, manageable, low complexity";
+            report2 = "Very high nesting, likely confusing, very high complexity, likely needs refactoring";
         }else if(result2<=40){
-            report2 = "Low nesting, easy to understand, low complexity";
+            report2 = "Moderate nesting, manageable, low complexity";
         }else if(result2<=60){
             report2 = "Moderate nesting, manageable, moderate complexity";
         }else if(result2<=80){
             report2 = "High nesting, potentially confusing, high complexity";
         }else{
-            report2 = "Very high nesting, likely confusing, very high complexity, likely needs refactoring";
+            report2 = "Low nesting, easy to understand, low complexity";
         }
 
         String report3 ="";
