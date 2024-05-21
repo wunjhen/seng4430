@@ -8,12 +8,12 @@ public class LengthOfIdentifiersModel {
         this.programText = programText;
     }
 
-    public double calculateAverageIdentifierLength() {
+    public int calculateAverageIdentifierLength() {
         String[] words = programText.split("\\W+");
         int totalLength = 0;
         for (String word : words) {
             totalLength += word.length();
         }
-        return (double) totalLength / words.length;
+        return (int) totalLength / words.length;
     }
 }

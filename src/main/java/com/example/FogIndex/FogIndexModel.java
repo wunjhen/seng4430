@@ -8,13 +8,13 @@ public class FogIndexModel {
         this.text = text;
     }
 
-    public double calculateFogIndex() {
+    public int calculateFogIndex() {
         int totalWords = countWords();
         int totalSentences = countSentences();
-        double avgSentenceLength = totalWords / (double) totalSentences;
-        double complexWords = countComplexWords();
+        int avgSentenceLength = totalWords / (int) totalSentences;
+        int complexWords = countComplexWords();
 
-        return 0.4 * (avgSentenceLength + (100 * complexWords / totalWords));
+        return (int) (0.4 * (avgSentenceLength + (100 * complexWords / totalWords)));
     }
 
     private int countWords() {

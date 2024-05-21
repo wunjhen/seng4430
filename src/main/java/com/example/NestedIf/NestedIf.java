@@ -6,8 +6,8 @@ import java.io.IOException;
 
 public class NestedIf {
 
-
-    public String countNestedIfs(File filePath) throws IOException {
+    public static int value;
+    public int countNestedIfs(File filePath) throws IOException {
         BufferedReader reader = new BufferedReader(new FileReader(filePath));
         String line;
         int nestedIfCount = 0;
@@ -27,6 +27,6 @@ public class NestedIf {
         }
 
         reader.close();
-        return "Number of nested if statements in the file: " + nestedIfCount;
+        return nestedIfCount;
     }
 }

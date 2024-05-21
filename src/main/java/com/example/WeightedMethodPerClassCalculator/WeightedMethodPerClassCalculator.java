@@ -6,8 +6,8 @@ import java.io.IOException;
 
 public class WeightedMethodPerClassCalculator {
 
-
-    public String calculateWeightedMethodPerClass(File filePath) throws IOException {
+    public int value;
+    public int calculateWeightedMethodPerClass(File filePath) throws IOException {
         int wmc = 0;
         boolean insideMethod = false;
 
@@ -41,6 +41,6 @@ public class WeightedMethodPerClassCalculator {
             }
         }
 
-        return "Weighted Method per Class: " + wmc;
+        return wmc;
     }
 }

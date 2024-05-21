@@ -12,7 +12,10 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class FanInFanOutCalculator {
-    public String FIFOCalculator(File File) {
+    public static int value;
+   
+    public int FIFOCalculator(File File) {
+        int num = 0;
         StringBuilder content = new StringBuilder();
         // Read method calls from the Java file
         Map<String, Set<String>> methodCalls = readMethodCalls(File);
@@ -24,8 +27,9 @@ public class FanInFanOutCalculator {
         for (Method method : methods.values()) {
             content.append(calculateFanInAndFanOut(method, methods));
             content.append("\n");
+            num++;
         }
-        return content.toString();
+        return num;
     }
 
     // Read method calls from Java file

@@ -12,13 +12,49 @@
         <maven.compiler.target>17</maven.compiler.target>
         <javafx.version>17</javafx.version>
     </properties>
-
+    
     <dependencies>
+       
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
             <version>17</version>
         </dependency>
+        <dependency>
+            <groupId>fr.inria.gforge.spoon</groupId>
+            <artifactId>spoon-core</artifactId>
+            <version>10.2.0</version> <!-- Use the latest version available -->
+        </dependency>
+        <dependency>
+            <groupId>org.jfree</groupId>
+            <artifactId>jfreechart</artifactId>
+            <version>1.5.3</version>
+        </dependency>
+        <!-- JCommon for JFreeChart -->
+        <dependency>
+            <groupId>org.jfree</groupId>
+            <artifactId>jcommon</artifactId>
+            <version>1.0.24</version>
+        </dependency>
+        <dependency>
+            <groupId>net.java.timingframework</groupId>
+            <artifactId>timingframework-swing</artifactId>
+            <version>7.3.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.miglayout</groupId>
+            <artifactId>miglayout-swing</artifactId>
+            <version>5.2</version> <!-- or use the version that matches your needs -->
+        </dependency>
+        <dependency>
+            <groupId>net.java.dev.timingframework</groupId>
+            <artifactId>timingframework</artifactId>
+            <version>1.0</version>
+        </dependency>
+        
+        
+        
+        
     </dependencies>
     
 
@@ -29,7 +65,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>com.example.frame.Main</mainClass>
+                            <mainClass>com.example.raven.main.Main</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>
@@ -54,7 +90,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>com.example.frame.FileBrowserGUI</mainClass> <!-- Replace com.example.MainClass with your actual main class -->
+                            <mainClass>com.example.raven.main.Main</mainClass> <!-- Replace com.example.MainClass with your actual main class -->
                         </manifest>
                     </archive>
                 </configuration>

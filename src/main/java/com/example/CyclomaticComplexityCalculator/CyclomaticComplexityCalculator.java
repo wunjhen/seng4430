@@ -5,7 +5,8 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class CyclomaticComplexityCalculator {
-    public String calculateCyclomaticComplexity(File selectedFile) throws IOException {
+    public static int value;
+    public int calculateCyclomaticComplexity(File selectedFile) throws IOException {
         // Read the file containing the code
         BufferedReader reader = new BufferedReader(new FileReader(selectedFile));
         String line;
@@ -19,6 +20,6 @@ public class CyclomaticComplexityCalculator {
             }
         }
         reader.close();
-        return "Cyclomatic Complexity of the code: " + complexity;
+        return complexity;
     }
 }

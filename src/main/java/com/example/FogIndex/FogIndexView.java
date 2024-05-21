@@ -19,8 +19,8 @@ public class FogIndexView {
         return input;
     }
 
-    public String displayFogIndex(double index) {
-        return "The Fog Index of the document is: " + index;
+    public int displayFogIndex(int index) {
+        return index;
     }
 }
 

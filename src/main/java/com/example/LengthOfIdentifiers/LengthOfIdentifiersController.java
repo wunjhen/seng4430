@@ -5,14 +5,18 @@ public class LengthOfIdentifiersController {
     
     private LengthOfIdentifiersModel model;
     private LengthOfIdentifiersView view;
-
+    public static int value;
     public LengthOfIdentifiersController(LengthOfIdentifiersModel model, LengthOfIdentifiersView view) {
         this.model = model;
         this.view = view;
     }
+    public LengthOfIdentifiersController() {
+       
+    }
 
-    public String analyzeIdentifiers() {
-        double averageLength = model.calculateAverageIdentifierLength();
+    public int analyzeIdentifiers() {
+        int averageLength = model.calculateAverageIdentifierLength();
         return view.displayAverageIdentifierLength(averageLength);
     }
+
 }
