@@ -11,6 +11,7 @@ import com.example.FanInFanOutCalculator.FanInFanOutCalculator;
 import com.example.FogIndex.FogIndexController;
 import com.example.LengthOfIdentifiers.LengthOfIdentifiersController;
 import com.example.NestedIf.NestedIf;
+import com.example.Security.PlainTextCredentialsCheck;
 import com.example.WeightedMethodPerClassCalculator.WeightedMethodPerClassCalculator;
 import com.example.raven.chart.ModelChart;
 public class Form_1 extends javax.swing.JPanel {
@@ -53,7 +54,8 @@ public class Form_1 extends javax.swing.JPanel {
         jLabelSecurity.setText("Security");
         progressSecurity.setBackground(new java.awt.Color(66, 246, 84));
         progressSecurity.setForeground(new java.awt.Color(19, 153, 32));
-        progressSecurity.setValue(10);
+        int result4 = (PlainTextCredentialsCheck.securityResult)*20;
+        progressSecurity.setValue(result4);
         javax.swing.GroupLayout jPanelSecurityLayout = new javax.swing.GroupLayout(jPanelSecurity);
         jPanelSecurity.setLayout(jPanelSecurityLayout);
         jPanelSecurityLayout.setHorizontalGroup(
@@ -237,7 +239,16 @@ public class Form_1 extends javax.swing.JPanel {
         }else{
             report3 = "High dependencies, high number of calls";
         }
-        jTextArea.setText("Your report has been out, just shown as below:\n" +"\n"+report2+"\n"+report3+"\n"+report1);
+
+        String report4 ="";
+        if(result4<=30){
+            report4 = "Low secure, easy to be hacked.";
+        }else if(result3<=70){
+            report4 = "Moderate secure, apply some mainstreamed encryption method.";
+        }else{
+            report4 = "High secure, difficult to break password and related algorithm.";
+        }
+        jTextArea.setText("Your report has been out, just shown as below:\n" +"\n"+report2+"\n"+report3+"\n"+report4+"\n"+report1);
         jTextArea.setWrapStyleWord(true);
         jTextArea.setLineWrap(true);
         jTextArea.setEditable(false); 

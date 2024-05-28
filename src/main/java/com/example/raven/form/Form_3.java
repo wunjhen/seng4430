@@ -18,6 +18,7 @@ import com.example.LengthOfIdentifiers.LengthOfIdentifiersController;
 import com.example.LengthOfIdentifiers.LengthOfIdentifiersModel;
 import com.example.LengthOfIdentifiers.LengthOfIdentifiersView;
 import com.example.NestedIf.NestedIf;
+import com.example.Security.PlainTextCredentialsCheck;
 import com.example.WeightedMethodPerClassCalculator.WeightedMethodPerClassCalculator;
 
 public class Form_3 extends javax.swing.JPanel{
@@ -54,6 +55,7 @@ public class Form_3 extends javax.swing.JPanel{
                     int value4 = 0;
                     int value5 = 0;
                     int value6 = 0;
+                    int value7 = 0;
                     String programText;
                     // fog index
                     FogIndexView view;
@@ -71,6 +73,8 @@ public class Form_3 extends javax.swing.JPanel{
                     WeightedMethodPerClassCalculator weightedMethodPerClassCalculator = new WeightedMethodPerClassCalculator();
                     // Fan in Fan out
                     FanInFanOutCalculator fanInFanOutCalculator = new FanInFanOutCalculator();
+                    // security
+                    PlainTextCredentialsCheck plainTextCredentialsCheck = new PlainTextCredentialsCheck();
                     for (File selectedFile : selectedFiles) {
                         try (
                             FileReader fileReader = new FileReader(selectedFile);
@@ -92,12 +96,14 @@ public class Form_3 extends javax.swing.JPanel{
                             liview = new LengthOfIdentifiersView();
                             licontroller = new LengthOfIdentifiersController(limodel, liview);
                             licontroller.analyzeIdentifiers();
+                            plainTextCredentialsCheck.credentialsCheck(programText);
                             value1 = controller.updateView() + value1;
                             value2 = licontroller.analyzeIdentifiers() + value2;
                             value3 = cyclomaticComplexityCalculator.calculateCyclomaticComplexity(selectedFile) + value4;
                             value4 = nestedIfCount.countNestedIfs(selectedFile) + value4;
                             value5 = weightedMethodPerClassCalculator.calculateWeightedMethodPerClass(selectedFile) + value5;
                             value6 = fanInFanOutCalculator.FIFOCalculator(selectedFile) + value6;
+                            value7 = plainTextCredentialsCheck.credentialsCheck(programText)+value7;
                         } catch (IOException ee) {
                             ee.printStackTrace();
                         }
@@ -108,6 +114,7 @@ public class Form_3 extends javax.swing.JPanel{
                     nestedIfCount.value=value4;
                     weightedMethodPerClassCalculator.value=value5;
                     fanInFanOutCalculator.value=value6;
+                    plainTextCredentialsCheck.securityResult=value7;
                     JOptionPane.showMessageDialog(Form_3.this, "Please go to report page!");
                 }
             }
