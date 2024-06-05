@@ -88,7 +88,7 @@ public class Form_1 extends javax.swing.JPanel {
         jLabelMaintainability.setText("Maintainability");
         progressMaintainability.setBackground(new java.awt.Color(186, 37, 37));
         progressMaintainability.setForeground(new java.awt.Color(241, 100, 120));
-        int result1 = Math.abs((200 -controller1.value-controller2.value)/4);
+        int result1 = Math.abs((200 -controller6.value-controller5.value-controller2.value)/4);
         progressMaintainability.setValue(result1);
         javax.swing.GroupLayout jPanelMaintainabilityLayout = new javax.swing.GroupLayout(jPanelMaintainability);
         jPanelMaintainability.setLayout(jPanelMaintainabilityLayout);
@@ -123,7 +123,7 @@ public class Form_1 extends javax.swing.JPanel {
         jPanel2.setOpaque(false);
         progress2.setBackground(new java.awt.Color(66, 193, 246));
         progress2.setForeground(new java.awt.Color(26, 132, 181));
-        int result2 = Math.abs((500 -controller3.value-controller4.value)/4);
+        int result2 = Math.abs((250 -controller3.value)/4);
         progress2.setValue(result2);
         jPanelReliability = new javax.swing.JPanel();
         jLabelReliability = new javax.swing.JLabel();
@@ -155,7 +155,7 @@ public class Form_1 extends javax.swing.JPanel {
         jPanelReliability.setOpaque(false);
         progressReliability.setBackground(new java.awt.Color(132, 66, 246));
         progressReliability.setForeground(new java.awt.Color(64, 18, 153));
-        int result3 = Math.abs((200 -controller5.value+controller6.value)/4);
+        int result3 = Math.abs((200 -controller4.value+controller1.value)/4);
         progressReliability.setValue(result3);
 
 
@@ -167,7 +167,7 @@ public class Form_1 extends javax.swing.JPanel {
         jLabelUsability.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         jLabelUsability.setForeground(new java.awt.Color(220, 220, 220));
         jLabelUsability.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelUsability.setText("Usability");
+        jLabelUsability.setText("Readability");
         javax.swing.GroupLayout jPanelUsabilityLayout = new javax.swing.GroupLayout(jPanelReliability);
         jPanelReliability.setLayout(jPanelUsabilityLayout);
         jPanelUsabilityLayout.setHorizontalGroup(
@@ -207,46 +207,46 @@ public class Form_1 extends javax.swing.JPanel {
         jTextArea = new javax.swing.JTextArea (10, 30);
         String report1 ="";
         if(result1<=20){
-            report1 = "Very difficult to read, very complex code, needs refactoring.";
+            report1 = "Maintainability - Low: Very difficult to read, very complex code, needs refactoring.";
         }else if(result1<=40){
-            report1 = "Difficult to read, complex code.";
+            report1 = "Maintainability - Moderate: Difficult to read, complex code.";
         }else if(result1<=60){
-            report1 = "Average difficulty, moderately complex code.";
+            report1 = "Maintainability - Moderate: Average difficulty, moderately complex code.";
         }else if(result1<=80){
-            report1 = "Easy to read, simple and well-structured code.";
+            report1 = "Maintainability - Good: Easy to read, simple and well-structured code.";
         }else{
-            report1 = "Very easy to read, simple and well-structured code.";
+            report1 = "Maintainability - Very Good: Very easy to read, simple and well-structured code.";
         }
 
         String report2 ="";
         if(result2<=20){
-            report2 = "Very high nesting, likely confusing, very high complexity, likely needs refactoring";
+            report2 = "Reliability - Low: Very high nesting, likely confusing, very high complexity, likely needs refactoring";
         }else if(result2<=40){
-            report2 = "Moderate nesting, manageable, low complexity";
+            report2 = "Reliability - Moderate: Moderate nesting, manageable, low complexity";
         }else if(result2<=60){
-            report2 = "Moderate nesting, manageable, moderate complexity";
+            report2 = "Reliability - Moderate: Moderate nesting, manageable, moderate complexity";
         }else if(result2<=80){
-            report2 = "High nesting, potentially confusing, high complexity";
+            report2 = "Reliability - Good: High nesting, potentially confusing, high complexity";
         }else{
-            report2 = "Low nesting, easy to understand, low complexity";
+            report2 = "Reliability - Very Good: Low nesting, easy to understand, low complexity";
         }
 
         String report3 ="";
         if(result3<=30){
-            report3 = "Low dependencies, low number of calls";
+            report3 = "Readability - It's difficult to read and understand the logical of code.";
         }else if(result3<=70){
-            report3 = "Moderate dependencies, moderate number of calls";
+            report3 = "Readability - Moderate, you need to read it more then once, and reference documents.";
         }else{
-            report3 = "High dependencies, high number of calls";
+            report3 = "Readability - the whole structure is good, it's more easy for developer to read it.";
         }
 
         String report4 ="";
         if(result4<=30){
-            report4 = "Low secure, easy to be hacked.";
-        }else if(result3<=70){
-            report4 = "Moderate secure, apply some mainstreamed encryption method.";
+            report4 = "Security - Low: Low secure, easy to be hacked.";
+        }else if(result4<=70){
+            report4 = "Security - Moderate: Moderate secure, apply some mainstreamed encryption method.";
         }else{
-            report4 = "High secure, difficult to break password and related algorithm.";
+            report4 = "Security - Very Good: High secure, difficult to break password and related algorithm.";
         }
         jTextArea.setText("Your report has been out, just shown as below:\n" +"\n"+report2+"\n"+report3+"\n"+report4+"\n"+report1);
         jTextArea.setWrapStyleWord(true);
