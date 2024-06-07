@@ -55,6 +55,9 @@ public class Form_1 extends javax.swing.JPanel {
         progressSecurity.setBackground(new java.awt.Color(66, 246, 84));
         progressSecurity.setForeground(new java.awt.Color(19, 153, 32));
         int result4 = (PlainTextCredentialsCheck.securityResult)*20;
+        if(result4>100){
+            result4=100;
+        }
         progressSecurity.setValue(result4);
         javax.swing.GroupLayout jPanelSecurityLayout = new javax.swing.GroupLayout(jPanelSecurity);
         jPanelSecurity.setLayout(jPanelSecurityLayout);
@@ -347,7 +350,7 @@ public class Form_1 extends javax.swing.JPanel {
         chart.addLegend("Usability", new Color(54, 4, 143), new Color(104, 49, 200));
         chart.addLegend("Security", new Color(5, 125, 0), new Color(95, 209, 69));
         chart.addLegend("Maintainability", new Color(186, 37, 37), new Color(241, 100, 120));
-        chart.addData(new ModelChart("Class", new double[]{result2, result3, 0, result1}));
+        chart.addData(new ModelChart("Class", new double[]{result2, result3, result4, result1}));
         chart.start();
         progressSecurity.start();
         progress2.start();
